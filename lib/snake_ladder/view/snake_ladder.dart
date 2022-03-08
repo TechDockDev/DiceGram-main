@@ -129,16 +129,15 @@ class _SnakeLadderState extends State<SnakeLadder> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
+
+                      Footer(
+                          snakeLaddersStore: _snakesLaddersStore,
+                          diceTwo : dice
+                      ),
+
                       Column(
                         children: [
-                          ElevatedButton(
-                            onPressed: () {
-                              utils.dialogRestart(context);
-                            },
-                            child: Text('Reset'),
-                            style: ButtonStyle(
-                                backgroundColor: MaterialStateProperty.all(Colors.orange)),
-                          ),
+
                           ElevatedButton(
                             onPressed: () {
 
@@ -149,11 +148,15 @@ class _SnakeLadderState extends State<SnakeLadder> {
                             style: ButtonStyle(
                                 backgroundColor: MaterialStateProperty.all(Colors.orange)),
                           ),
+                          ElevatedButton(
+                            onPressed: () {
+                              utils.dialogRestart(context);
+                            },
+                            child: Text('Reset'),
+                            style: ButtonStyle(
+                                backgroundColor: MaterialStateProperty.all(Colors.orange)),
+                          ),
                         ],
-                      ),
-                      Footer(
-                          snakeLaddersStore: _snakesLaddersStore,
-                          diceTwo : dice
                       ),
                     ],
                   ),
