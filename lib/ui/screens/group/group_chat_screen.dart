@@ -62,8 +62,11 @@ class _GroupChatScreenState extends State<GroupChatScreen> {
     double width = MediaQuery.of(context).size.width;
     return WillPopScope(
       onWillPop: () async {
-        Navigator.pop(context);
-        Navigator.pop(context);
+        // Navigator.pop(context);
+        Navigator.pushReplacement(context,
+            MaterialPageRoute(builder: (context) {
+          return Dashboard();
+        })).then((value) => true);
         return true;
       },
       child: Scaffold(
@@ -191,49 +194,56 @@ class _GroupChatScreenState extends State<GroupChatScreen> {
                                   },
                                 )
                               : Center(
-                                child: GridView(
-                                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2),
-                                  children: [
-                                    ClipOval(
-                                      // decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(5))),
-                                      child: InkWell(
-                                        onTap: (){
-                                                selectedGame = AppConstants.chess;
-                                        onGameSelected(KeyConstants.CHESS);
-                                  
-                                        },
-                                        child: Image.asset('assets/AllGamesPics/ChessSet.jpg', fit: BoxFit.fill,)),
-                                    ),
-                                    ClipOval(
-                                      child: InkWell(
-                                        onTap: (){},
-                                        
-                                        child: Image.asset('assets/AllGamesPics/ludo.png', fit: BoxFit.fill)),
-                                    ),
-                                    ClipOval(
-                                      child: InkWell(
-                                        onTap: (){
-                                               selectedGame = AppConstants.tikTackToe;
-                                        onGameSelected(
-                                            KeyConstants.TickTackToe);
-                                   
-                                   
-                                        },
-                                        
-                                        child: Image.asset('assets/AllGamesPics/tic-tac-toe.jpg', fit: BoxFit.fill)),
-                                    ),
-                                    ClipOval(
-                                      child: InkWell(
-                                        onTap: (){
-                                          selectedGame = AppConstants.snakeLadder;
-                                        onGameSelected(
-                                            KeyConstants.SNAKE_LADDER);
-                                      
-                                        },
-                                        child: Image.asset('assets/AllGamesPics/ChessSet.jpg', fit: BoxFit.fill)),
-                                    ),
-
-                                  ],
+                                  child: GridView(
+                                    gridDelegate:
+                                        SliverGridDelegateWithFixedCrossAxisCount(
+                                            crossAxisCount: 2),
+                                    children: [
+                                      ClipOval(
+                                        // decoration: BoxDecoration(borderRadius: BorderRadius.all(Radius.circular(5))),
+                                        child: InkWell(
+                                            onTap: () {
+                                              selectedGame = AppConstants.chess;
+                                              onGameSelected(
+                                                  KeyConstants.CHESS);
+                                            },
+                                            child: Image.asset(
+                                              'assets/AllGamesPics/ChessSet.jpg',
+                                              fit: BoxFit.fill,
+                                            )),
+                                      ),
+                                      ClipOval(
+                                        child: InkWell(
+                                            onTap: () {},
+                                            child: Image.asset(
+                                                'assets/AllGamesPics/ludo.png',
+                                                fit: BoxFit.fill)),
+                                      ),
+                                      ClipOval(
+                                        child: InkWell(
+                                            onTap: () {
+                                              selectedGame =
+                                                  AppConstants.tikTackToe;
+                                              onGameSelected(
+                                                  KeyConstants.TickTackToe);
+                                            },
+                                            child: Image.asset(
+                                                'assets/AllGamesPics/tic-tac-toe.jpg',
+                                                fit: BoxFit.fill)),
+                                      ),
+                                      ClipOval(
+                                        child: InkWell(
+                                            onTap: () {
+                                              selectedGame =
+                                                  AppConstants.snakeLadder;
+                                              onGameSelected(
+                                                  KeyConstants.SNAKE_LADDER);
+                                            },
+                                            child: Image.asset(
+                                                'assets/AllGamesPics/ChessSet.jpg',
+                                                fit: BoxFit.fill)),
+                                      ),
+                                    ],
                                   ),
                                   // child: Column(children: [
                                   //   ElevatedButton(

@@ -1,4 +1,4 @@
-// ignore_for_file: deprecated_member_use, prefer_const_constructors, prefer_typing_uninitialized_variables, avoid_print, curly_braces_in_flow_control_structures
+// ignore_for_file: deprecated_member_use, prefer_const_constructors, prefer_typing_uninitialized_variables, avoid_print, curly_braces_in_flow_control_structures, prefer_const_literals_to_create_immutables
 
 import 'dart:math';
 import 'package:dicegram/TikTakToe/providers.dart';
@@ -190,16 +190,6 @@ class _TickTackToe extends State<TickTackToe> {
                               );
                             }),
                       ),
-                    ],
-                  ),
-                ),
-                Expanded(
-                  flex: 1,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      // ElevatedButton(onPressed: (){}, child: Text(activePlayer.toString())),
-                      SizedBox(height: 50),
                       Container(
                         decoration: BoxDecoration(
                           shape: BoxShape.circle,
@@ -213,6 +203,29 @@ class _TickTackToe extends State<TickTackToe> {
                           onPressed: resetGame,
                         ),
                       ),
+                    ],
+                  ),
+                ),
+                Expanded(
+                  flex: 1,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      // ElevatedButton(onPressed: (){}, child: Text(activePlayer.toString())),
+                      SizedBox(height: 200),
+                      // Container(
+                      //   decoration: BoxDecoration(
+                      //     shape: BoxShape.circle,
+                      //   ),
+                      //   child: ElevatedButton(
+                      //     child: Text(
+                      //       "Reset",
+                      //       style:
+                      //           TextStyle(color: Colors.white, fontSize: 12.0),
+                      //     ),
+                      //     onPressed: resetGame,
+                      //   ),
+                      // ),
                     ],
                   ),
                 )
